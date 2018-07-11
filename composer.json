@@ -1,0 +1,24 @@
+{
+  "name": "doylee/turing-api_sdk",
+  "description": "为图灵机器人API构建的PHP-SDK",
+  "type": "library",
+  "require": {
+    "php": "^7.2",
+    "filp/whoops": "^2.2"
+  },
+  "require-dev": {
+    "filp/whoops": "^2.2"
+  },
+  "license": "GNU GPL V3",
+  "authors": [
+    {
+      "name": "doylee",
+      "email": "dongyunli619@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "turingApi_sdk\\": "src"
+    }
+  }
+}
