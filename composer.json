@@ -9,7 +9,7 @@
   "require-dev": {
     "filp/whoops": "^2.2"
   },
-  "license": "GNU GPL V3",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "doylee",

@@ -7,9 +7,7 @@
  */
 
 return [
-	/** 调试模式，开启后可使用whoops错误提示包，生产环境下请一定关闭，并对抛出的异常进行捕获处理 */
-	'debug'  => true,
 	
 	/** string 机器人标识 */
-	'apiKey' => '机器人标识'
+	'apiKey' => '722577318ee04de4ab4dedaa11c8d19b'
 ];

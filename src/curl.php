@@ -18,7 +18,7 @@ class curl
 	const to = 'http://openapi.tuling123.com/openapi/api/v2';
 	
 	/** @var string 机器人标识 */
-	const api_key = '722577318ee04de4ab4dedaa11c8d19b';
+	const api_key = '';
 	
 	/** @var array 请求参数 */
 	private static $data = [
@@ -52,10 +52,11 @@ class curl
 	
 	/**
 	 * 发起对图灵API的curl请求
-	 * @param $data
+	 * @param array $data
+	 * @param bool  $type
 	 * @return mixed
 	 */
-	public static function request ($data)
+	public static function request (array $data,bool $type = false)
 	{
 		// 对传值进行转换格式
 		$data = is_array($data) || is_object($data)
@@ -82,7 +83,7 @@ class curl
 		// 关闭curl句柄
 		curl_close($ch);
 		
-		return $output;
+		return json_decode($output,$type);
 	}
 	
 	/**

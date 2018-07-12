@@ -40,7 +40,7 @@ class turing
 	public function setIntent ($intent)
 	: turing
 	{
-		if ( $intent['code'] !== 10004 ) throw new \Error(self::getResults()[0]['values']['text'], $intent['code']);
+		if ( $intent['code'] !== 10004 ) throw new \Error(self::getResults()[0]['text'], $intent['code']);
 		
 		self::$intent = $intent;
 		
@@ -57,6 +57,11 @@ class turing
 		return self::simplifyReturn(self::$results);
 	}
 	
+	public static function getResultText ()
+	{
+		return self::simplifyReturn(self::$results)[1]['text'];
+	}
+	
 	/**
 	 * 简化返回值
 	 * @param array $results
@@ -65,10 +70,10 @@ class turing
 	private static function simplifyReturn (array $results)
 	: array
 	{
-		$res = [];
+		$res_array = $res = [];
 		foreach ( $results as $result ) $res[ $result['groupType'] ][ $result['resultType'] ] = $result['values']['text'];
-		
-		return $res;
+		foreach ($res as $value)   $res_array[] = $value;
+		return $res_array;
 	}
 	
 	/**
